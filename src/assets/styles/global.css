@@ -1,0 +1,36 @@
+@import url(./reset.css);
+@import url(./fonts.css);
+
+:root {
+    --white: #fff;
+    --blue: #195feb;
+    --color-bg: #22305c;
+    --black: #000;
+    --color-error: #f00;
+    --color-text: #333;
+    --card-category-bg: #f0f;   
+    --font-family: 'Manrope', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    font-size: 1rem;
+    background-color: var(--color-bg);
+}
+
+.container {
+    position: relative;
+    max-width: 86.25rem;
+    min-height: 100vh;
+    padding: 0 0.9rem;
+    margin: 0 auto;
+    background-color: var(--color-bg);
+}
+
+button {
+    cursor: pointer;
+}
