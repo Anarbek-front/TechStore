@@ -4,17 +4,18 @@
 :root {
     --white: #fff;
     --blue: #195feb;
-    --color-bg: #22305c;
+    --color-bg: #ccd0db;
     --black: #000;
     --color-error: #f00;
     --color-text: #333;
-    --card-category-bg: #f0f;   
+    --card-category-bg: #f0f;
     --font-family: 'Manrope', sans-serif;
 }
 
 html {
     scroll-behavior: smooth;
 }
+
 
 body {
     font-family: var(--font-family);

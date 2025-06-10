@@ -1,3 +1,55 @@
 .advantages_card {
-    
+    background-color: #fff;
+    padding: 20px 20px 50px 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    gap: 10px;
+    outline: 2px solid transparent;
+    transition: outline 0.3s ease;
+}
+
+.advantages_card:hover {
+    outline: 2px solid gray;
+}
+
+.advantages_card_img {
+    width: 20%;
+}
+
+.advantages_text {
+    font-size: 21px;
+    font-weight: 600;
+}
+
+.main_text {
+    color: #000;
+}
+
+.main_text > a:hover {
+    color: #ff8b1e;
+}
+
+.continuationtMainText {
+    color: #545759;
+}
+
+@media (max-width: 768px) {
+    .advantages_text {
+        font-size: 18px;
+    }
+    .advantages_card_img {
+        width: 20%;
+    }
+}
+
+@media (max-width: 480px) {
+    .advantages_text {
+        font-size: 16px;
+    }
+    .advantages_card_img {
+        width: 25%;
+    }
 }

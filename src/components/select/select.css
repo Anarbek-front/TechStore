@@ -1,0 +1,56 @@
+.select_container {
+    position: relative;
+    width: 200px;
+}
+
+.select_header {
+    background: rgb(88, 80, 221);
+    padding: 10px;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 100%;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.select_header.focus {
+    padding: 8px;
+    border: 2px solid rgb(108, 99, 255);
+    background: rgb(83, 76, 194);
+    z-index: 1;
+}
+
+.select_arrow {
+    transition: transform 0.3s;
+}
+
+.select_arrow.open {
+    transform: rotate(180deg);
+}
+
+.select_options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    overflow-y: auto;
+    border: 1px solid rgb(108, 99, 255);
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.select_option {
+    color: rgb(108, 99, 255);
+    cursor: pointer;
+    padding: 4px 6px;
+    margin: 8px 0px;
+}
+
+.select_option:hover {
+    background: rgba(108, 99, 255, 0.2);
+    width: 100%;
+}

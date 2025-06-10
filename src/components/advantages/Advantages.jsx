@@ -5,9 +5,19 @@ import AdvantagesCard from './advantagesCard/AdvantagesCard'
 const Advantages = () => {
     return (
         <div>
-            {mockDataAdvantages.map(({ id, logo, msg }) => (
-                <AdvantagesCard key={id} msg={msg} logo={logo} />
-            ))}
+            <h2 className="our_advantages">Наши преимущества</h2>
+            <div className="advantages_container">
+                {mockDataAdvantages.map(
+                    ({ id, logo, continuationtMainText, mainText }) => (
+                        <AdvantagesCard
+                            key={id}
+                            mainText={mainText}
+                            continuationtMainText={continuationtMainText}
+                            logo={logo}
+                        />
+                    )
+                )}
+            </div>
         </div>
     )
 }
