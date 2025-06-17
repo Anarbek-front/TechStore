@@ -1,14 +1,18 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useMediaQuery } from '@mui/material'
 import LocalGroceryStoreOutlinedIcon from '@mui/icons-material/LocalGroceryStoreOutlined'
-import './header.css'
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined'
 import ReorderOutlinedIcon from '@mui/icons-material/ReorderOutlined'
 import ClearOutlinedIcon from '@mui/icons-material/ClearOutlined'
+import { ReusableModal } from '../UI/ReusableModal'
+import { ReusableInput } from '../UI/ReusableInput'
+import { ButtonReusable } from '../UI/button/ButtonReusable'
+import './header.css'
 
 const Header = () => {
     const sideBarRef = useRef(null)
     const isMobile = useMediaQuery('(max-width:800px)')
+    const [openModal, setOpenModal] = useState(false)
     const showSideBar = () => {
         if (sideBarRef.current) sideBarRef.current.style.display = 'flex'
     }
@@ -28,8 +32,20 @@ const Header = () => {
         return () => document.removeEventListener('mousedown', clickOutside)
     }, [])
 
+    const close = () => {
+        setOpenModal(false)
+    }
+
     return (
         <header>
+            <ReusableModal open={openModal} handleClose={close}>
+                <div className="login_container">
+                    <h2 className="login_form_title">Login</h2>
+                    <ReusableInput label={'Email'} type={'email'} />
+                    <ReusableInput label={'Password'} type={'password'} />
+                    <ButtonReusable variant="success">Login</ButtonReusable>
+                </div>
+            </ReusableModal>
             <h2 className="logo">TechStore</h2>
             {isMobile && (
                 <ul ref={sideBarRef} className="sidebar">
@@ -72,6 +88,7 @@ const Header = () => {
                 <PersonOutlineOutlinedIcon
                     className="general_properties_icon"
                     cursor={'pointer'}
+                    onClick={() => setOpenModal(true)}
                 />
                 {!isMobile ? (
                     <LocalGroceryStoreOutlinedIcon

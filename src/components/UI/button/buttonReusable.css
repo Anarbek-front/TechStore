@@ -1,0 +1,25 @@
+.reusable_btn {
+    font-family: 'Manrope';
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 8px 30px;
+    border-radius: 0.3125rem;
+    text-align: center;
+    text-decoration: none;
+}
+.reusable_btn:hover {
+    filter: brightness(90%);
+}
+
+@media (max-width: 480px) {
+    .reusable_btn {
+        padding: 4px 15px;
+        border-radius: 0.1875rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .reusable_btn {
+        padding: 5px 20px;
+    }
+}
