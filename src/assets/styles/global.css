@@ -16,11 +16,13 @@ html {
     scroll-behavior: smooth;
 }
 
+a:hover {
+    color: #ff8000;
+}
 
 body {
     font-family: var(--font-family);
     font-size: 1rem;
-    background-color: var(--color-bg);
 }
 
 .container {
@@ -29,7 +31,6 @@ body {
     min-height: 100vh;
     padding: 0 0.9rem;
     margin: 0 auto;
-    background-color: var(--color-bg);
 }
 
 button {

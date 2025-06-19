@@ -4,10 +4,11 @@ import LocalGroceryStoreOutlinedIcon from '@mui/icons-material/LocalGroceryStore
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined'
 import ReorderOutlinedIcon from '@mui/icons-material/ReorderOutlined'
 import ClearOutlinedIcon from '@mui/icons-material/ClearOutlined'
-import { ReusableModal } from '../UI/ReusableModal'
-import { ReusableInput } from '../UI/ReusableInput'
+import { ReusableModal } from '../UI/modal/ReusableModal'
+import { ReusableInput } from '../UI/input/ReusableInput'
 import { ButtonReusable } from '../UI/button/ButtonReusable'
 import './header.css'
+import { mockDataBrands } from '../../mocks/brands'
 
 const Header = () => {
     const sideBarRef = useRef(null)
@@ -54,33 +55,94 @@ const Header = () => {
                         cursor={'pointer'}
                         className="clear_outline_icon"
                     />
-                    <li>
-                        <a href="#">Home</a>
-                    </li>
-                    <li>
-                        <a href="#">Shop</a>
-                    </li>
-                    <li>
-                        <a href="#">About</a>
-                    </li>
-                    <li>
-                        <a href="#">Contact</a>
-                    </li>
+                    <li className="item_menu">Смартфоны</li>
+                    <li className="item_menu">Ноутбуки</li>
+                    <li className="item_menu">Аудио</li>
+                    <li className="item_menu">Бренды</li>
                 </ul>
             )}
             {!isMobile && (
                 <ul>
-                    <li>
-                        <a href="#">Home</a>
+                    <li className="item_menu">
+                        Смартфоны
+                        <ul className="dropdown">
+                            <li>
+                                <a href="#">Apple</a>
+                            </li>
+                            <li>
+                                <a href="#">Samsung</a>
+                            </li>
+                            <li>
+                                <a href="#">Google</a>
+                            </li>
+                            <li>
+                                <a href="#">Huawei</a>
+                            </li>
+                            <li>
+                                <a href="#">MI</a>
+                            </li>
+                        </ul>
                     </li>
-                    <li>
-                        <a href="#">Shop</a>
+                    <li className="item_menu">
+                        Ноутбуки
+                        <ul className="dropdown">
+                            <li>
+                                <a href="#">MacBook</a>
+                            </li>
+                            <li>
+                                <a href="#">Samsung</a>
+                            </li>
+                            <li>
+                                <a href="#">Acer</a>
+                            </li>
+                            <li>
+                                <a href="#">Asus</a>
+                            </li>
+                            <li>
+                                <a href="#">Microsoft</a>
+                            </li>
+                            <li>
+                                <a href="#">HP</a>
+                            </li>
+                            <li>
+                                <a href="#">MSI</a>
+                            </li>
+                        </ul>
                     </li>
-                    <li>
-                        <a href="#">About</a>
+                    <li className="item_menu">
+                        Аудио
+                        <ul className="dropdown">
+                            <li>
+                                <a href="#">JBL</a>
+                            </li>
+                            <li>
+                                <a href="#">AKG</a>
+                            </li>
+                            <li>
+                                <a href="#">Apple</a>
+                            </li>
+                            <li>
+                                <a href="#">Beats</a>
+                            </li>
+                            <li>
+                                <a href="#">Marshal</a>
+                            </li>
+                            <li>
+                                <a href="#">Sony</a>
+                            </li>
+                        </ul>
                     </li>
-                    <li>
-                        <a href="#">Contact</a>
+                    <li className="item_menu">
+                        Бренды
+                        <ul className="dropdown brand_container">
+                            {mockDataBrands.map(({ logo, id }) => (
+                                <li key={id} className="brand_card">
+                                    <a href="#">
+                                        <img src={logo} alt="brand_logo" />
+                                    </a>
+                                </li>
+                            ))}
+                        </ul>
                     </li>
                 </ul>
             )}
